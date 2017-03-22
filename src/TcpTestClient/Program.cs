@@ -62,6 +62,10 @@ namespace TcpTestClient
 
 				var runTask = RunClientAsync(client);
 			}
+			catch (SocketException ex)
+			{
+				Console.WriteLine($"Connect Error: SocketErrorCode = {ex.SocketErrorCode},  {ex}");
+			}
 			catch (Exception ex)
 			{
 				Console.WriteLine($"Connect Error: {ex}");
